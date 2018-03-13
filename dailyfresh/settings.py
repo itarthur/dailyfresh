@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os, sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# 配合AUTH_USER_MODEL食用
 sys.path.insert(1, os.path.join(BASE_DIR, 'apps'))
 
 
@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'dailyfresh.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'freshmarket',
+        'HOST': 'localhost',
+        'PORT': 3306,
+        'USER': 'python',
+        'PASSWORD': '111111'
     }
 }
 
